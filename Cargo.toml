@@ -1,0 +1,11 @@
+[package]
+name = "ternary-llm"
+version = "0.1.0"
+edition = "2021"
+description = "Ternary LLM building blocks: BitNet 1.58-bit quantization, token embeddings, transformer blocks, KV-cache compression, and generation utilities"
+license = "MIT"
+keywords = ["llm", "ternary", "bitnet", "quantization", "transformer"]
+
+[lib]
+name = "ternary_llm"
+path = "src/lib.rs"
