@@ -1,43 +1,30 @@
-# PLUG_AND_PLAY — ternary-llm
+# PLUG_AND_PLAY — Llm
 
-> *Integration guide for incorporating ternary-llm into your SuperInstance fleet setup.*
+> Ternary LLM building blocks: BitNet 1.58-bit quantization
 
-## Dependency
+## 🚀 Quick Start
+
+Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-ternary_llm = "0.1.0"
+ternary-llm = { git = "https://github.com/SuperInstance/ternary-llm" }
 ```
 
-## Feature Flags
-
-| Feature | Default | Description |
-|---------|---------|-------------|
-| `std` | yes | Standard library support |
-| `alloc` | yes | Allocator support (for no_std) |
-
-## Integration Patterns
-
-### Basic Usage
+Use in your code:
 
 ```rust
-use ternary_llm::*;
+use ternary_llm::{bitnet_quantize, TernaryLM};
+
+let (trits, scale) = bitnet_quantize(&[0.5, -0.3, 0.0, 1.2]);
+let mut lm = TernaryLM::new(1000, 128);
+let output = lm.generate("Hello");
 ```
 
-### With the Ternary Ecosystem
+## 🔗 Integration
 
-This crate works naturally with:
-- [ternary-core](https://github.com/SuperInstance/ternary-core) for Z₃ arithmetic
-- [ternary-types](https://github.com/SuperInstance/ternary-types) for type-level encodings
+This crate is part of the [SuperInstance ternary fleet](https://github.com/SuperInstance). It uses the canonical `Ternary` type from `ternary-types` for cross-crate compatibility.
 
-## Configuration
+## 📄 License
 
-ternary-llm requires minimal configuration. Where configuration is needed:
-- No runtime configuration files needed — pure library
-- Feature gates control optional dependencies
-
-## Compatibility
-
-- **Rust edition**: 2021+
-- **Targets**: All tier-1 Rust targets (x86_64, aarch64, ARM Cortex)
-- **no_std**: Not applicable
+MIT
