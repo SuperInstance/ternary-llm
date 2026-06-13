@@ -9,3 +9,6 @@ keywords = ["llm", "ternary", "bitnet", "quantization", "transformer"]
 [lib]
 name = "ternary_llm"
 path = "src/lib.rs"
+
+[dependencies]
+ternary-types = { git = "https://github.com/SuperInstance/ternary-types", branch = "master" }

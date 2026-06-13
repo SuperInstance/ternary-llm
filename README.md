@@ -1,4 +1,6 @@
 # ternary-llm
+[![Migration: Binary → Ternary](https://img.shields.io/badge/Migration-Binary%E2%86%92Ternary-blueviolet)](https://github.com/SuperInstance/ternary-types)
+
 
 **Ternary language model building blocks: a complete miniature LLM with {-1, 0, +1} weights.**
 

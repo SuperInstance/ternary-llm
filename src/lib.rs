@@ -6,7 +6,11 @@
 //! alongside a per-tensor float scale. Forward pass multiplies by scale after
 //! the integer accumulation, keeping arithmetic cheap.
 
-/// A single ternary weight value.
+/// Canonical ternary type — re-exported from [ternary-types](https://github.com/SuperInstance/ternary-types).
+pub use ternary_types::Ternary;
+
+/// Deprecated: use [`Ternary`] instead.
+#[deprecated(since = "0.2.0", note = "use ternary_types::Ternary instead")]
 pub type Trit = i8;
 
 /// Quantize a float slice to trits {-1, 0, +1} using BitNet 1.58-bit scheme.
